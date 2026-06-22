@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Matching Comparison</title>
+</head>
+<body>
+
+    <h1>String Matching Algorithm Comparison</h1>
+
+    <form method="POST">
+        <label>Text:</label><br>
+        <textarea name="text" rows="5" cols="60"></textarea><br><br>
+
+        <label>Pattern:</label><br>
+        <input type="text" name="pattern"><br><br>
+
+        <button type="submit">Search</button>
+    </form>
+
+    {% if results %}
+    <h2>Results</h2>
+
+    <table border="1">
+        <tr>
+            <th>Algorithm</th>
+            <th>Matches</th>
+            <th>Comparisons</th>
+        </tr>
+
+        <tr>
+            <td>Naive</td>
+            <td>{{ results.naive[0] }}</td>
+            <td>{{ results.naive[1] }}</td>
+        </tr>
+
+        <tr>
+            <td>KMP</td>
+            <td>{{ results.kmp[0] }}</td>
+            <td>{{ results.kmp[1] }}</td>
+        </tr>
+
+        <tr>
+            <td>Rabin-Karp</td>
+            <td>{{ results.rk[0] }}</td>
+            <td>{{ results.rk[1] }}</td>
+        </tr>
+    </table>
+    {% endif %}
+
+</body>
+</html>
